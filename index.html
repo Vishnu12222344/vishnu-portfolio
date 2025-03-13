@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishnu Pratapani - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #fff;
+            background-color: #1a1a1a;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.8);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo {
+            font-size: 24px;
+            color: #fff;
+        }
+        .logo span {
+            color: red;
+        }
+        ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        ul li a {
+            text-decoration: none;
+            color: #fff;
+        }
+        .download-btn {
+            padding: 10px 20px;
+            background-color: red;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .hero {
+            text-align: center;
+            padding: 150px 20px 100px;
+            background: url('assests/hero.png') no-repeat center center/cover;
+        }
+        .hero h1 {
+            font-size: 50px;
+        }
+        .hero span {
+            color: red;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: red;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+
+        /* About Me Section */
+        .about {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 80px 50px;
+            background-color: #111;
+            opacity: 0;
+            transform: translateX(-100%);
+        }
+        .about img {
+            width: 300px;
+            border-radius: 10px;
+            margin-right: 50px;
+        }
+        .about-text {
+            max-width: 600px;
+        }
+        .about h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .about p {
+            font-size: 18px;
+            line-height: 1.5;
+        }
+        .skills {
+            padding: 80px 50px;
+            background-color:  #111;
+            text-align: center;
+        }
+
+        .skills h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .skill {
+            flex: 1 1 200px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .skill i {
+            font-size: 40px;
+            color: #007BFF;
+            margin-bottom: 10px;
+        }
+
+        .skill h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .skill p {
+            font-size: 14px;
+            color: #555;
+        }
+
+
+        /* Education Section */
+        .education {
+            padding: 50px;
+            background-color: #222;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(100%);
+        }
+        .education h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .education-container {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .edu-item {
+            background: #333;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .edu-item h3 {
+            margin: 0;
+            font-size: 22px;
+            color: red;
+        }
+        .edu-item p {
+            margin: 5px 0;
+            font-size: 16px;
+            color: #ddd;
+        }
+
+        /* Projects Section */
+        .projects {
+            padding: 80px 50px;
+            background-color: #111;
+            text-align: center;
+        }
+
+        .projects h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-item {
+            flex: 1 1 300px;
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+
+        .project-item h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #007BFF;
+        }
+
+        .project-item p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .project-item .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .project-item .btn:hover {
+            background-color: #0056b3;
+        }
+        /* Contact Section */
+        .contact {
+            padding: 80px 50px;
+            background-color: #111;
+            text-align: center;
+        }
+        .contact h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .contact form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .contact input,
+        .contact textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .contact button {
+            padding: 10px 20px;
+            background-color: red;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .contact button:hover {
+            background-color: #ff0000;
+        }
+        </style>
+</head>
+<body>
+    <nav>
+        <h2 class="logo">Vishnu <span>Pratapani</span></h2>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="assests/fullstackwebdevelopercv11.pdf" class="download-btn">Download CV</a>
+    </nav>
+
+    <header class="hero">
+        <h1>I'm <span>Developer</span> Vishnu Pratapani</h1>
+        <p>Transforming ideas into reality with elegant and efficient code.</p>
+        <a href="#about" class="btn">Learn More</a>
+    </header>
+
+    <section id="about" class="about">
+        <img src="assests/profile.jpg" alt="Vishnu Pratapani">
+        <div class="about-text">
+            <h2>About Me</h2>
+            <p>
+                I am a passionate Full-Stack Web Developer with expertise in creating dynamic, 
+                user-friendly, and visually appealing websites. With experience in technologies like HTML, 
+                CSS, JavaScript, React, Node.js, and MongoDB, I bring ideas to life with clean and efficient code.
+            </p>
+            <p>
+                I have developed projects such as <strong>BloodNetwork360</strong> and a full-fledged eCommerce 
+                website using PHP, React, and Bootstrap. Always eager to learn new technologies and solve complex 
+                problems efficiently.
+            </p>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <h2>My Skills</h2>
+        <div class="skills-container">
+            <div class="skill">
+                <i class="fab fa-html5"></i>
+                <h3>HTML</h3>
+                <p>Proficient in creating structured and semantic web pages.</p>
+            </div>
+            <div class="skill">
+                <i class="fab fa-css3-alt"></i>
+                <h3>CSS</h3>
+                <p>Skilled in styling and designing responsive websites.</p>
+            </div>
+            <div class="skill">
+                <i class="fab fa-js"></i>
+                <h3>JavaScript</h3>
+                <p>Experienced in building interactive web applications.</p>
+            </div>
+            <div class="skill">
+                <i class="fab fa-react"></i>
+                <h3>React</h3>
+                <p>Proficient in developing dynamic user interfaces.</p>
+            </div>
+            <div class="skill">
+                <i class="fab fa-node-js"></i>
+                <h3>Node.js</h3>
+                <p>Skilled in building scalable backend systems.</p>
+            </div>
+            <div class="skill">
+                <i class="fas fa-database"></i>
+                <h3>MongoDB</h3>
+                <p>Experienced in managing NoSQL databases.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="education" class="education">
+        <h2>Education</h2>
+        <div class="education-container">
+            <div class="edu-item">
+                <h3>Lovely Professional University Punjab <span style="float:right; font-weight:bold;">Since 2022</span></h3>
+                <p><em>Bachelor of Technology - Computer Science and Engineering; CGPA: 7.29</em></p>
+                <p><em>Jalandhar, Punjab</em></p>
+            </div>
+            <div class="edu-item">
+                <h3>Viswasai Junior College <span style="float:right; font-weight:bold;">2020 – 2022</span></h3>
+                <p><em>Intermediate; Percentage: 86%</em></p>
+                <p><em>Tirupati, Andhra Pradesh</em></p>
+            </div>
+            <div class="edu-item">
+                <h3>Prasanna Bharathi High School <span style="float:right; font-weight:bold;">2019 – 2020</span></h3>
+                <p><em>Matriculation; Percentage: 87%</em></p>
+                <p><em>Tirupati, Andhra Pradesh</em></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <h2>Projects</h2>
+        <div class="projects-container">
+            <div class="project-item">
+                <img src="assests/project1.png" alt="BloodNetwork360" style="width:100%; border-radius: 10px;">
+                <h3>BloodNetwork360</h3>
+                <p>Created a secure web platform for blood donation management using PHP and MySQL.</p>
+                <a href="#" class="btn">Visit Website</a>
+            </div>
+            <div class="project-item">
+                <img src="assests/project2.png" alt="E-Commerce Website" style="width:100%; border-radius: 10px;">
+                <h3>Sri Sainatha Enterprises</h3>
+                <p>Developed a full-fledged eCommerce website using React and Bootstrap.</p>
+                <a href="#" class="btn">Visit Website</a>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="contact">
+            <h2>Contact Me</h2>
+            <form action="contact.php" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.1/gsap.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // About Section Animation (Slide from left to right)
+            gsap.to(".about", { duration: 1, x: 0, opacity: 1, ease: "power4.out" });
+
+            // Skills Section Animation (Slide from right to left)
+            gsap.to(".skills", { duration: 1, x: 0, opacity: 1, ease: "power4.out", delay: 0.5 });
+
+            // Education Section Animation (Slide from bottom to top)
+            gsap.to(".education", { duration: 1, y: 0, opacity: 1, ease: "power4.out", delay: 1 });
+
+            // Projects Section Animation (Slide from bottom to top)
+            gsap.to(".projects", { duration: 1, y: 0, opacity: 1, ease: "power4.out", delay: 1.5 });
+        });
+    </script>
+</body>
+</html>
